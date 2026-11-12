@@ -17,49 +17,15 @@ import {
     SocialContact
 } from "./types.js";
 
-function normalizeVimeoEmbedUrl(rawUrl: string): string {
+function enforceVimeo1080p(rawUrl: string): string {
     if (!rawUrl) {
         return "";
     }
-    let videoId: string = "";
-    let hashParam: string = "";
-
-    const playerMatch: RegExpMatchArray | null = rawUrl.match(/player\.vimeo\.com\/video\/(\d+)/);
-    const standardMatch: RegExpMatchArray | null = rawUrl.match(/vimeo\.com\/(\d+)(?:\/([a-zA-Z0-9]+))?/);
-    const hashQueryMatch: RegExpMatchArray | null = rawUrl.match(/[?&]h=([a-zA-Z0-9]+)/);
-
-    if (playerMatch && playerMatch[1]) {
-        videoId = playerMatch[1];
-    } else if (standardMatch && standardMatch[1]) {
-        videoId = standardMatch[1];
-        if (standardMatch[2]) {
-            hashParam = standardMatch[2];
-        }
+    if (rawUrl.includes("vimeo.com") && !rawUrl.includes("quality=")) {
+        const separator: string = rawUrl.includes("?") ? "&" : "?";
+        return `${rawUrl}${separator}quality=1080p`;
     }
-
-    if (hashQueryMatch && hashQueryMatch[1]) {
-        hashParam = hashQueryMatch[1];
-    }
-
-    if (!videoId) {
-        return rawUrl;
-    }
-
-    const params: string[] = [];
-    if (hashParam) {
-        params.push(`h=${hashParam}`);
-    }
-    params.push("quality=1080p");
-    params.push("autoplay=1");
-    params.push("loop=1");
-    params.push("muted=1");
-    params.push("autopause=0");
-    params.push("playsinline=1");
-    params.push("title=0");
-    params.push("byline=0");
-    params.push("portrait=0");
-
-    return `https://player.vimeo.com/video/${videoId}?${params.join("&")}`;
+    return rawUrl;
 }
 
 function calculateRatingSummary(reviews: ClientReview[]): RatingSummary {
@@ -187,13 +153,13 @@ function renderProfileSidebar(): void {
 
 function buildMediaMarkup(project: FlagshipProject): string {
     if (project.mediaType === "video" && project.mediaUrl) {
-        const hdVideoUrl: string = normalizeVimeoEmbedUrl(project.mediaUrl);
+        const hdVideoUrl: string = enforceVimeo1080p(project.mediaUrl);
         return `
             <div class="media-frame video-wrapper">
                 <iframe src="${hdVideoUrl}" 
                         allow="autoplay; fullscreen; picture-in-picture" 
                         allowfullscreen 
-                        loading="eager"
+                        loading="lazy"
                         title="${project.title}"></iframe>
             </div>
         `;

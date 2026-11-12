@@ -15,9 +15,9 @@ function normalizeVimeoEmbedUrl(rawUrl) {
     let videoId = "";
     let hashParam = "";
 
-    const playerMatch: RegExpMatchArray | null = rawUrl.match(/player\.vimeo\.com\/video\/(\d+)/);
-    const standardMatch: RegExpMatchArray | null = rawUrl.match(/vimeo\.com\/(\d+)(?:\/([a-zA-Z0-9]+))?/);
-    const hashQueryMatch: RegExpMatchArray | null = rawUrl.match(/[?&]h=([a-zA-Z0-9]+)/);
+    const playerMatch = rawUrl.match(/player\.vimeo\.com\/video\/(\d+)/);
+    const standardMatch = rawUrl.match(/vimeo\.com\/(\d+)(?:\/([a-zA-Z0-9]+))?/);
+    const hashQueryMatch = rawUrl.match(/[?&]h=([a-zA-Z0-9]+)/);
 
     if (playerMatch && playerMatch[1]) {
         videoId = playerMatch[1];
@@ -307,31 +307,13 @@ function renderReviewsAndSecondaryRepos(reviews) {
     }
 }
 
-async function initializeDashboard() {
+function initializeDashboard() {
     renderProfileSidebar();
     renderReviewsAndSecondaryRepos(CLIENT_REVIEWS);
     setupModalListeners();
-
-    try {
-        const resp = await fetch("dist/runtime_assets.json", { cache: "no-store" });
-        if (resp.ok) {
-            const manifest = (await resp.json());
-            FLAGSHIP_PROJECTS.forEach((proj) => {
-                if (proj.id === "ebay" && !proj.mediaUrl && manifest.ebay_video_url) {
-                    proj.mediaUrl = manifest.ebay_video_url;
-                } else if (proj.id === "fragment" && !proj.mediaUrl && manifest.fragment_video_url) {
-                    proj.mediaUrl = manifest.fragment_video_url;
-                } else if (proj.id === "osint" && !proj.mediaUrl && manifest.osint_image_url) {
-                    proj.mediaUrl = manifest.osint_image_url;
-                }
-            });
-        }
-    } catch {
-    }
-
     renderFlagshipProjects(FLAGSHIP_PROJECTS);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    initializeDashboard().catch(() => {});
+    initializeDashboard();
 });

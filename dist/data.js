@@ -1,6 +1,6 @@
 export const AVATAR_IMAGE_URL = "assets/avatar.png";
-export const CUSTOM_EBAY_VIDEO_URL = "";
-export const CUSTOM_FRAGMENT_VIDEO_URL = "";
+export const CUSTOM_EBAY_VIDEO_URL = "https://player.vimeo.com/video/1013476903";
+export const CUSTOM_FRAGMENT_VIDEO_URL = "https://player.vimeo.com/video/1013511417";
 export const CUSTOM_OSINT_VIDEO_URL = "https://vimeo.com/1246288462?share=copy&fl=sv&fe=ci";
 
 export const CORE_LANGUAGES = [
