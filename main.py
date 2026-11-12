@@ -47,8 +47,22 @@ def strip_typescript_types(ts_source: str) -> str:
 
 
 def compile_typescript() -> bool:
-    logger.info("Using verified production JavaScript modules in dist/")
-    return True
+    try:
+        frontend_dir: Path = BASE_DIR / "src" / "frontend"
+        dist_dir: Path = BASE_DIR / "dist"
+        dist_dir.mkdir(parents=True, exist_ok=True)
+
+        for filename in ("data.ts", "app.ts"):
+            ts_path: Path = frontend_dir / filename
+            js_path: Path = dist_dir / filename.replace(".ts", ".js")
+            raw_ts: str = ts_path.read_text(encoding="utf-8")
+            compiled_js: str = strip_typescript_types(raw_ts)
+            js_path.write_text(compiled_js, encoding="utf-8")
+            logger.info(f"Transpiled {ts_path.name} -> dist/{js_path.name}")
+        return True
+    except Exception as exc:
+        logger.error(f"Failed transpiling TypeScript files: {exc}", exc_info=True)
+        return False
 
 
 def start_preview_server() -> None:

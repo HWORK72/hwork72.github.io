@@ -1,9 +1,9 @@
 import { ClientReview, FlagshipProject, LanguageBadge, SecondaryRepo, SocialContact } from "./types.js";
 
 export const AVATAR_IMAGE_URL: string = "assets/avatar.png";
+export const CUSTOM_OSINT_IMAGE_URL: string = "assets/osint_preview.jpg";
 export const CUSTOM_EBAY_VIDEO_URL: string = "";
 export const CUSTOM_FRAGMENT_VIDEO_URL: string = "";
-export const CUSTOM_OSINT_VIDEO_URL: string = "https://vimeo.com/1246288462?share=copy&fl=sv&fe=ci";
 
 export const CORE_LANGUAGES: LanguageBadge[] = [
     { name: "Python", color: "#3572A5" },
@@ -76,8 +76,8 @@ export const FLAGSHIP_PROJECTS: FlagshipProject[] = [
         subtitle: "",
         description: "High-throughput reconnaissance microservice and web dashboard analyzing IPs, domains, open ports, and emails across Shodan, AlienVault OTX, and BGP ASN telemetry in real-time.",
         githubUrl: "https://github.com/HWORK72/OSINT-Threat-Detector",
-        mediaType: "video",
-        mediaUrl: CUSTOM_OSINT_VIDEO_URL,
+        mediaType: "image",
+        mediaUrl: CUSTOM_OSINT_IMAGE_URL,
         languages: [
             { name: "TypeScript", color: "#3178C6" },
             { name: "FastAPI", color: "#8e918f" },
