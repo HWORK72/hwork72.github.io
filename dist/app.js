@@ -185,14 +185,14 @@ function renderFlagshipProjects(projects) {
                 ${buildMediaMarkup(proj)}
                 <div class="project-info">
                     <div class="project-top">
-                        <div class="project-header">
-                            <h2 class="project-title">${proj.title}</h2>
-                            <a href="${proj.githubUrl}" target="_blank" rel="noopener noreferrer" class="neutral-btn">
-                                View Code
-                            </a>
-                        </div>
-                        <div class="project-badges">${badgesHtml}</div>
+                        <h2 class="project-title">${proj.title}</h2>
                         <p class="project-desc">${proj.description}</p>
+                    </div>
+                    <div class="project-footer">
+                        <div class="project-badges">${badgesHtml}</div>
+                        <a href="${proj.githubUrl}" target="_blank" rel="noopener noreferrer" class="neutral-btn">
+                            View Code
+                        </a>
                     </div>
                 </div>
             </article>

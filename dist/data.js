@@ -44,7 +44,7 @@ export const FLAGSHIP_PROJECTS = [
         id: "ebay",
         title: "eBay Market & Price Scraper",
         subtitle: "",
-        description: "Asynchronous catalog scraper extracting real-time pricing intelligence and item conditions while bypassing Akamai Edge WAF via TLS/JA4 spoofing.",
+        description: "Production asynchronous catalog scraper extracting real-time pricing intelligence, seller metrics, and item conditions while bypassing Akamai Edge WAF via TLS/JA4 fingerprint spoofing and proxy rotation.",
         githubUrl: "https://github.com/HWORK72/eBay-Market-Scraper",
         mediaType: "video",
         mediaUrl: CUSTOM_EBAY_VIDEO_URL,
@@ -58,7 +58,7 @@ export const FLAGSHIP_PROJECTS = [
         id: "fragment",
         title: "Fragment NFT Trading Agent",
         subtitle: "",
-        description: "Automated high-frequency sniper monitoring and executing instant bids on undervalued Telegram Gifts and collectibles on the TON Blockchain.",
+        description: "High-frequency sniper bot and desktop control suite monitoring live auctions and executing instant bids on undervalued Telegram Gifts, usernames, and numbers on the TON Blockchain.",
         githubUrl: "https://github.com/HWORK72/Fragment-NFT-Trading-Agent",
         mediaType: "video",
         mediaUrl: CUSTOM_FRAGMENT_VIDEO_URL,
@@ -72,7 +72,7 @@ export const FLAGSHIP_PROJECTS = [
         id: "osint",
         title: "OSINT Threat Intelligence Engine",
         subtitle: "",
-        description: "High-throughput threat scoring dashboard analyzing IPs, domains, and emails across Shodan, AlienVault OTX, and BGP telemetry in real-time.",
+        description: "High-throughput reconnaissance microservice and web dashboard analyzing IPs, domains, open ports, and emails across Shodan, AlienVault OTX, and BGP ASN telemetry in real-time.",
         githubUrl: "https://github.com/HWORK72/OSINT-Threat-Detector",
         mediaType: "image",
         mediaUrl: CUSTOM_OSINT_IMAGE_URL,
@@ -87,19 +87,19 @@ export const FLAGSHIP_PROJECTS = [
 export const SECONDARY_REPOS = [
     {
         name: "Proxy-Edge-Profiler",
-        description: "L3/L4/L7 proxy profiler & Anycast CDN PoP / BGP ASN analyzer",
+        description: "High-speed L3/L4/L7 proxy profiler and Anycast CDN PoP analyzer evaluating Cloudflare routing, BGP ASN fraud scores, and subnet ban risks.",
         githubUrl: "https://github.com/HWORK72/Proxy-Edge-Profiler",
         language: { name: "Rust", color: "#DEA584" }
     },
     {
         name: "ShieldMod",
-        description: "Voice-activated Minecraft controller via Python-to-Java IPC socket bridge",
+        description: "Voice-activated Minecraft equipment controller bridging a background Python speech recognition listener with a native Java mod over local IPC sockets.",
         githubUrl: "https://github.com/HWORK72/ShieldMod",
         language: { name: "Java", color: "#B07219" }
     },
     {
         name: "AntiBot-Fingerprint-Prober",
-        description: "Stealth diagnostic benchmark evaluating TLS JA3/JA4, HTTP/2 & CDP leaks",
+        description: "Multi-layer stealth diagnostic benchmark evaluating automated browsers and scrapers for TLS (JA3/JA4), HTTP/2 frame, and CDP fingerprint leaks.",
         githubUrl: "https://github.com/HWORK72/AntiBot-Fingerprint-Prober",
         language: { name: "Lua", color: "#38bdf8" }
     }

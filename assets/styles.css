@@ -6,7 +6,7 @@
     --border-color: #333537;
     --border-hover: #444746;
     --text-primary: #e3e3e3;
-    --text-secondary: #8e918f;
+    --text-secondary: #9aa0a6;
     --star-gold: #fbbf24;
 }
 
@@ -34,7 +34,7 @@ body {
     height: 100vh;
     padding: 14px 16px;
     display: grid;
-    grid-template-columns: 1.65fr 1fr 330px;
+    grid-template-columns: 1.62fr 1fr 340px;
     gap: 14px;
     align-items: stretch;
 }
@@ -43,11 +43,11 @@ body {
     background: var(--bg-panel);
     border: 1px solid var(--border-color);
     border-radius: 12px;
-    padding: 14px 16px;
+    padding: 16px;
 }
 
 .section-heading {
-    font-size: 0.86rem;
+    font-size: 0.92rem;
     font-weight: 600;
     color: var(--text-primary);
     letter-spacing: -0.01em;
@@ -146,18 +146,26 @@ body {
     gap: 10px;
 }
 
-.project-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 10px;
-}
-
 .project-title {
-    font-size: 1.02rem;
+    font-size: 1.08rem;
     font-weight: 600;
     color: var(--text-primary);
     line-height: 1.25;
+}
+
+.project-desc {
+    font-size: 0.84rem;
+    line-height: 1.52;
+    color: var(--text-secondary);
+}
+
+.project-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border-color);
 }
 
 .neutral-btn {
@@ -165,9 +173,9 @@ body {
     background: var(--bg-surface);
     color: var(--text-primary);
     border: 1px solid var(--border-hover);
-    font-size: 0.74rem;
+    font-size: 0.76rem;
     font-weight: 500;
-    padding: 6px 12px;
+    padding: 6px 13px;
     border-radius: 7px;
     white-space: nowrap;
     transition: background 0.15s ease;
@@ -187,12 +195,12 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 5px;
-    font-size: 0.71rem;
+    font-size: 0.73rem;
     font-weight: 500;
     color: var(--text-primary);
     background: var(--bg-surface);
     border: 1px solid var(--border-color);
-    padding: 3px 8px;
+    padding: 3px 9px;
     border-radius: 5px;
 }
 
@@ -203,15 +211,9 @@ body {
     display: inline-block;
 }
 
-.project-desc {
-    font-size: 0.8rem;
-    line-height: 1.48;
-    color: var(--text-secondary);
-}
-
 .center-column {
     display: grid;
-    grid-template-rows: 1fr 1.05fr;
+    grid-template-rows: 0.92fr 1.08fr;
     gap: 12px;
     min-height: 0;
     height: 100%;
@@ -232,7 +234,7 @@ body {
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid var(--border-color);
-    padding-bottom: 8px;
+    padding-bottom: 9px;
     flex-shrink: 0;
 }
 
@@ -243,7 +245,7 @@ body {
 }
 
 .score-number {
-    font-size: 1.5rem;
+    font-size: 1.55rem;
     font-weight: 700;
     color: var(--text-primary);
     font-family: "JetBrains Mono", monospace;
@@ -252,12 +254,12 @@ body {
 
 .stars-row {
     color: var(--star-gold);
-    font-size: 0.85rem;
+    font-size: 0.86rem;
     letter-spacing: 2px;
 }
 
 .score-sub {
-    font-size: 0.71rem;
+    font-size: 0.72rem;
     color: var(--text-secondary);
 }
 
@@ -265,7 +267,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    gap: 8px;
+    gap: 9px;
     flex: 1;
     min-height: 0;
     overflow-y: auto;
@@ -275,7 +277,7 @@ body {
     background: var(--bg-surface);
     border: 1px solid var(--border-color);
     border-radius: 9px;
-    padding: 10px 12px;
+    padding: 11px 13px;
     display: flex;
     flex-direction: column;
     gap: 6px;
@@ -289,8 +291,8 @@ body {
 }
 
 .review-avatar {
-    width: 28px;
-    height: 28px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     object-fit: cover;
 }
@@ -302,31 +304,31 @@ body {
 }
 
 .review-author {
-    font-size: 0.78rem;
+    font-size: 0.81rem;
     font-weight: 600;
 }
 
 .review-stars {
     color: var(--star-gold);
-    font-size: 0.72rem;
+    font-size: 0.74rem;
     letter-spacing: 1px;
 }
 
 .review-handle {
-    font-size: 0.68rem;
+    font-size: 0.7rem;
     color: var(--text-secondary);
 }
 
 .review-text {
-    font-size: 0.74rem;
-    line-height: 1.38;
+    font-size: 0.76rem;
+    line-height: 1.42;
     color: var(--text-primary);
 }
 
 .secondary-repos-stack {
     display: grid;
     grid-template-rows: repeat(3, 1fr);
-    gap: 8px;
+    gap: 9px;
     flex: 1;
     min-height: 0;
 }
@@ -337,11 +339,11 @@ body {
     background: var(--bg-surface);
     border: 1px solid var(--border-color);
     border-radius: 9px;
-    padding: 10px 14px;
+    padding: 12px 15px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 5px;
+    gap: 6px;
     transition: background 0.15s ease, border-color 0.15s ease;
 }
 
@@ -357,15 +359,16 @@ body {
 }
 
 .sec-repo-name {
-    font-size: 0.82rem;
+    font-size: 0.94rem;
     font-weight: 600;
     font-family: "JetBrains Mono", monospace;
+    color: var(--text-primary);
 }
 
 .sec-repo-desc {
-    font-size: 0.74rem;
+    font-size: 0.8rem;
     color: var(--text-secondary);
-    line-height: 1.35;
+    line-height: 1.42;
 }
 
 .more-projects-btn {
@@ -374,10 +377,10 @@ body {
     color: var(--text-primary);
     border: 1px solid var(--border-hover);
     border-radius: 8px;
-    padding: 8px 12px;
+    padding: 9px 14px;
     text-align: center;
-    font-size: 0.76rem;
-    font-weight: 500;
+    font-size: 0.8rem;
+    font-weight: 600;
     flex-shrink: 0;
     transition: background 0.15s ease;
 }
@@ -389,7 +392,7 @@ body {
 .profile-sidebar {
     display: flex;
     flex-direction: column;
-    gap: 11px;
+    justify-content: space-between;
     height: 100%;
     overflow-y: auto;
 }
@@ -399,29 +402,29 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 4px 0 2px 0;
+    padding: 6px 0 2px 0;
 }
 
 .tg-avatar-img {
-    width: 68px;
-    height: 68px;
+    width: 96px;
+    height: 96px;
     border-radius: 50%;
     object-fit: cover;
     border: 1px solid var(--border-hover);
     background: var(--bg-surface);
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
 .tg-name {
-    font-size: 1.08rem;
+    font-size: 1.2rem;
     font-weight: 700;
     color: var(--text-primary);
 }
 
 .tg-status {
-    font-size: 0.74rem;
+    font-size: 0.77rem;
     color: var(--text-secondary);
-    margin-top: 2px;
+    margin-top: 3px;
 }
 
 .tg-divider {
@@ -434,11 +437,11 @@ body {
 .tg-section {
     display: flex;
     flex-direction: column;
-    gap: 6px;
+    gap: 7px;
 }
 
 .tg-section-label {
-    font-size: 0.68rem;
+    font-size: 0.7rem;
     font-weight: 600;
     color: var(--text-secondary);
     text-transform: uppercase;
@@ -448,7 +451,7 @@ body {
 .tg-contacts-list {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 6px;
 }
 
 .tg-contact-row {
@@ -456,7 +459,7 @@ body {
     background: var(--bg-surface);
     border: 1px solid var(--border-color);
     border-radius: 8px;
-    padding: 6px 11px;
+    padding: 7px 12px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -472,14 +475,14 @@ body {
 }
 
 .tg-contact-handle {
-    font-size: 0.76rem;
+    font-size: 0.8rem;
     font-weight: 500;
     font-family: "JetBrains Mono", monospace;
     color: var(--text-primary);
 }
 
 .tg-contact-type {
-    font-size: 0.68rem;
+    font-size: 0.71rem;
     color: var(--text-secondary);
 }
 
@@ -487,28 +490,28 @@ body {
 .tech-tags-bar {
     display: flex;
     flex-wrap: wrap;
-    gap: 4px;
+    gap: 5px;
 }
 
 .lang-pill {
     display: inline-flex;
     align-items: center;
-    gap: 5px;
+    gap: 6px;
     background: var(--bg-surface);
     border: 1px solid var(--border-color);
-    padding: 3px 7px;
-    border-radius: 5px;
-    font-size: 0.7rem;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 0.74rem;
     font-weight: 500;
 }
 
 .stack-tag {
-    font-size: 0.66rem;
+    font-size: 0.69rem;
     color: var(--text-secondary);
     background: var(--bg-surface);
     border: 1px solid var(--border-color);
-    padding: 2px 6px;
-    border-radius: 4px;
+    padding: 3px 7px;
+    border-radius: 5px;
 }
 
 .modal-backdrop {
