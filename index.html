@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HWORK72 — Software Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+    <main class="workspace-grid">
+        <section class="left-column">
+            <div id="flagship-grid" class="flagship-stack"></div>
+        </section>
+
+        <section class="center-column">
+            <div class="panel-card reviews-panel">
+                <div id="rating-summary-box" class="rating-header"></div>
+                <div id="reviews-list-box" class="reviews-stack"></div>
+            </div>
+
+            <div class="panel-card other-projects-panel">
+                <div class="panel-header">
+                    <span class="section-heading">Other Projects</span>
+                </div>
+                <div id="secondary-repos-box" class="secondary-repos-stack"></div>
+                <a href="https://github.com/HWORK72?tab=repositories" target="_blank" rel="noopener noreferrer" class="more-projects-btn">
+                    See More Projects
+                </a>
+            </div>
+        </section>
+
+        <aside class="panel-card profile-sidebar">
+            <div class="tg-profile-top">
+                <img id="profile-avatar-img" src="assets/avatar.png" alt="HWORK72" class="tg-avatar-img" />
+                <h1 class="tg-name">HWORK72</h1>
+                <p class="tg-status">Software Developer • Almaty, KZ (UTC+5)</p>
+            </div>
+
+            <div class="tg-divider"></div>
+
+            <div class="tg-section">
+                <div class="tg-section-label">Contacts & Links</div>
+                <div id="social-links-bar" class="tg-contacts-list"></div>
+            </div>
+
+            <div class="tg-divider"></div>
+
+            <div class="tg-section">
+                <div class="tg-section-label">Languages</div>
+                <div id="core-languages-bar" class="languages-bar"></div>
+            </div>
+
+            <div class="tg-section">
+                <div class="tg-section-label">Core Stack</div>
+                <div id="tech-stack-bar" class="tech-tags-bar"></div>
+            </div>
+        </aside>
+    </main>
+
+    <div id="image-modal" class="modal-backdrop">
+        <div class="modal-content">
+            <button id="modal-close" class="modal-close-btn">Close</button>
+            <img id="modal-img" src="" alt="Preview" />
+            <p id="modal-caption" class="modal-caption"></p>
+        </div>
+    </div>
+
+    <div id="copy-toast" class="copy-toast"></div>
+
+    <script type="module" src="dist/app.js"></script>
+</body>
+</html>
