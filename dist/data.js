@@ -1,7 +1,7 @@
 export const AVATAR_IMAGE_URL = "assets/avatar.png";
-export const CUSTOM_OSINT_IMAGE_URL = "assets/osint_preview.jpg";
 export const CUSTOM_EBAY_VIDEO_URL = "";
 export const CUSTOM_FRAGMENT_VIDEO_URL = "";
+export const CUSTOM_OSINT_VIDEO_URL = "https://vimeo.com/1246288462?share=copy&fl=sv&fe=ci";
 
 export const CORE_LANGUAGES = [
     { name: "Python", color: "#3572A5" },
@@ -74,8 +74,8 @@ export const FLAGSHIP_PROJECTS = [
         subtitle: "",
         description: "High-throughput reconnaissance microservice and web dashboard analyzing IPs, domains, open ports, and emails across Shodan, AlienVault OTX, and BGP ASN telemetry in real-time.",
         githubUrl: "https://github.com/HWORK72/OSINT-Threat-Detector",
-        mediaType: "image",
-        mediaUrl: CUSTOM_OSINT_IMAGE_URL,
+        mediaType: "video",
+        mediaUrl: CUSTOM_OSINT_VIDEO_URL,
         languages: [
             { name: "TypeScript", color: "#3178C6" },
             { name: "FastAPI", color: "#8e918f" },
