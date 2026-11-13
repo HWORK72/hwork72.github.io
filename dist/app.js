@@ -8,15 +8,49 @@ import {
     TECH_STACK_TAGS
 } from "./data.js";
 
-function enforceVimeo1080p(rawUrl) {
+function normalizeVimeoEmbedUrl(rawUrl) {
     if (!rawUrl) {
         return "";
     }
-    if (rawUrl.includes("vimeo.com") && !rawUrl.includes("quality=")) {
-        const separator = rawUrl.includes("?") ? "&" : "?";
-        return `${rawUrl}${separator}quality=1080p`;
+    let videoId = "";
+    let hashParam = "";
+
+    const playerMatch = rawUrl.match(/player\.vimeo\.com\/video\/(\d+)/);
+    const standardMatch = rawUrl.match(/vimeo\.com\/(\d+)(?:\/([a-zA-Z0-9]+))?/);
+    const hashQueryMatch = rawUrl.match(/[?&]h=([a-zA-Z0-9]+)/);
+
+    if (playerMatch && playerMatch[1]) {
+        videoId = playerMatch[1];
+    } else if (standardMatch && standardMatch[1]) {
+        videoId = standardMatch[1];
+        if (standardMatch[2]) {
+            hashParam = standardMatch[2];
+        }
     }
-    return rawUrl;
+
+    if (hashQueryMatch && hashQueryMatch[1]) {
+        hashParam = hashQueryMatch[1];
+    }
+
+    if (!videoId) {
+        return rawUrl;
+    }
+
+    const params = [];
+    if (hashParam) {
+        params.push(`h=${hashParam}`);
+    }
+    params.push("quality=1080p");
+    params.push("autoplay=1");
+    params.push("loop=1");
+    params.push("muted=1");
+    params.push("autopause=0");
+    params.push("playsinline=1");
+    params.push("title=0");
+    params.push("byline=0");
+    params.push("portrait=0");
+
+    return `https://player.vimeo.com/video/${videoId}?${params.join("&")}`;
 }
 
 function calculateRatingSummary(reviews) {
@@ -144,13 +178,14 @@ function renderProfileSidebar() {
 
 function buildMediaMarkup(project) {
     if (project.mediaType === "video" && project.mediaUrl) {
-        const hdVideoUrl = enforceVimeo1080p(project.mediaUrl);
+        const hdVideoUrl = normalizeVimeoEmbedUrl(project.mediaUrl);
         return `
             <div class="media-frame video-wrapper">
                 <iframe src="${hdVideoUrl}" 
-                        allow="autoplay; fullscreen; picture-in-picture" 
+                        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media" 
+                        referrerpolicy="strict-origin-when-cross-origin"
                         allowfullscreen 
-                        loading="lazy"
+                        loading="eager"
                         title="${project.title}"></iframe>
             </div>
         `;

@@ -18,8 +18,8 @@ TS_TYPE_EXPR: str = (
     r"(?:ClientReview|FlagshipProject|LanguageBadge|RatingSummary|"
     r"RuntimeAssetsManifest|SecondaryRepo|SocialContact|HTMLElement|"
     r"HTMLImageElement|HTMLAnchorElement|NodeListOf|MouseEvent|Element|"
-    r"Response|Promise|string|number|boolean|void)"
-    r"(?:<[^>]+>|\[\])*(?:\s*\|\s*null)?"
+    r"RegExpMatchArray|Response|Promise|string|number|boolean|void)"
+    r"(?:<[^>]+>|\[\])*(?:\s*\|\s*(?:null|undefined))?"
 )
 
 
